@@ -9,5 +9,5 @@ public class BookingBackendApplication {
     public static void main(String[] args) {
         SpringApplication.run(BookingBackendApplication.class, args);
     }
-
+    //тестовый комментарий
 }
