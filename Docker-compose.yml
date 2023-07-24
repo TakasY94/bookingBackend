@@ -1,0 +1,11 @@
+version: "1"
+
+services:
+  postgres:
+    image: postgres:15.3
+    container_name: db
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=tracker
+    restart: always
+
