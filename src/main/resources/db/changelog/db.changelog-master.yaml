@@ -2,7 +2,7 @@ databaseChangeLog:
   - logicalFilePath: db/changelog/db.changelog-master.yaml
   - changeSet:
       id: 1
-      author: aleks_usharovskii
+      author: llalka
       changes:
         - createTable:
             tableName: users
@@ -37,7 +37,7 @@ databaseChangeLog:
 
   - changeSet:
       id: 2
-      author: aleks_usharovskii
+      author: llalka
       comment: "Create admin user"
       changes:
         - insert:

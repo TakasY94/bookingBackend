@@ -1,11 +1,10 @@
 version: "1"
-
 services:
   postgres:
-    image: postgres:15.3
-    container_name: db
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_USER=postgres
-      - POSTGRES_DB=tracker
-    restart: always
-
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: "tracker"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "password"
+    ports:
+      - "5432:5432"
