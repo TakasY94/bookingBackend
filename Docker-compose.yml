@@ -1,0 +1,10 @@
+version: "1"
+services:
+  postgres:
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: "tracker"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "password"
+    ports:
+      - "5432:5432"
