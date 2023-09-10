@@ -1,0 +1,53 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="takasy (generated)" id="1694115114660-1">
+        <createTable tableName="addresses">
+            <column name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="addresses_pk"/>
+            </column>
+            <column name="coordinates" type="VARCHAR(128)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="takasy (generated)" id="1694115114660-2">
+        <createTable tableName="estate">
+            <column name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="estate_pk"/>
+            </column>
+            <column name="address_id" type="INTEGER"/>
+            <column name="owner_id" type="INTEGER"/>
+            <column name="type" type="VARCHAR(56)"/>
+            <column name="charasteristics_id" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="takasy (generated)" id="1694115114660-3">
+        <createTable tableName="estate_information">
+            <column name="City" type="VARCHAR(128)"/>
+            <column name="size" type="FLOAT4"/>
+            <column name="quantity_of_room" type="INTEGER"/>
+            <column name="floor_number" type="INTEGER"/>
+            <column name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="estate_information_pk"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="takasy (generated)" id="1694115114660-4">
+        <createTable tableName="owners">
+            <column name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="owners_pk"/>
+            </column>
+            <column name="name" type="VARCHAR(128)"/>
+            <column name="date_of_birth" type="timestamp"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="takasy (generated)" id="1694115114660-5">
+        <addForeignKeyConstraint baseColumnNames="address_id" baseTableName="estate" constraintName="estate_addres_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="addresses" validate="true"/>
+    </changeSet>
+    <changeSet author="takasy (generated)" id="1694115114660-6">
+        <addForeignKeyConstraint baseColumnNames="charasteristics_id" baseTableName="estate" constraintName="estate_charasteristics_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="estate_information" validate="true"/>
+    </changeSet>
+    <changeSet author="takasy (generated)" id="1694115114660-7">
+        <addForeignKeyConstraint baseColumnNames="owner_id" baseTableName="estate" constraintName="estate_owner_fk" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="owners" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
