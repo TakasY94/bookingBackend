@@ -1,5 +1,5 @@
 databaseChangeLog:
-  - logicalFilePath: db/changelog/db.changelog-master.yaml
+  - logicalFilePath: db/changelog/db.changelog-example.yaml
   - changeSet:
       id: 1
       author: llalka
